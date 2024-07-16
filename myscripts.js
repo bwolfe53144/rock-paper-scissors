@@ -21,25 +21,39 @@ let humanScore = 0;
 let computerScore = 0;
 let rounds = 0;
 
-function playRound(humanChoice, computerChoice) {
-    if (humanChoice === computerChoice) {
-        alert(`Computer also chose ${computerChoice}, it's a tie.`);
-    } else if ((humanChoice === 'rock' && computerChoice === 'scissors') 
-        || (humanChoice === 'paper' && computerChoice === 'rock') 
-        || (humanChoice === 'scissors' && computerChoice === 'paper')) {
-        humanScore = ++humanScore
-        alert(`Computer chose ${computerChoice}, and ${humanChoice} beats ${computerChoice} so you win!!!`);
-    } else {
-        alert(`Computer chose ${computerChoice}, and ${computerChoice} beats ${humanChoice} so you lose!`);
-        computerScore = ++computerScore
+function playGame() {
+    function playRound(humanChoice, computerChoice) {
+        if (humanChoice === computerChoice) {
+            alert(`Computer also chose ${computerChoice}, it's a tie.`);
+        } else if ((humanChoice === 'rock' && computerChoice === 'scissors') 
+            || (humanChoice === 'paper' && computerChoice === 'rock') 
+            || (humanChoice === 'scissors' && computerChoice === 'paper')) {
+            humanScore = ++humanScore
+            alert(`Computer chose ${computerChoice}, and ${humanChoice} beats ${computerChoice} so you win!!!`);
+        } else {
+            alert(`Computer chose ${computerChoice}, and ${computerChoice} beats ${humanChoice} so you lose!`);
+            computerScore = ++computerScore
+        }
+        rounds = rounds++
     }
-    rounds = rounds++
+
+    humanSelection = getHumanChoice();
+    computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
+    alert(`Score- You: ${humanScore}  Computer: ${computerScore}`);
 }
 
-humanSelection = getHumanChoice();
-computerSelection = getComputerChoice();
+playGame();
+playGame();
+playGame();
+playGame();
+playGame();
 
-playRound(humanSelection, computerSelection);
+
+
+
+
     
 
 
