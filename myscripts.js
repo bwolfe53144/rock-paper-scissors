@@ -48,6 +48,14 @@ for (i = 0; i < 5; ++i) {
     playGame();
 }
 
+if (humanScore > computerScore) {
+    alert('You win!');
+} else if (computerScore > humanScore) {
+    alert('The computer wins!');
+} else {
+    alert(`It's a tie.`);
+}
+
 
 
 
